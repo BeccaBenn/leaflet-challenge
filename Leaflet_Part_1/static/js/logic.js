@@ -92,15 +92,15 @@ var legend = L.control({ position: "bottomright" });
 
 legend.onAdd = function (map) {
     var div = L.DomUtil.create("div", "info legend"),
-        grades = [-10, 10, 30, 50, 70, 90],
+        depths = [-10, 10, 30, 50, 70, 90],
         labels = [];
 
     div.innerHTML += "<h4>Depth Legend</h4>";
     // Loop through depth intervals and generate labels
-    for (var i = 0; i < grades.length; i++) {
+    for (var i = 0; i < depths.length; i++) {
         div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-            grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
+            '<i style="background:' + getColor(depths[i] + 1) + '"></i> ' +
+            depths[i] + (depths[i + 1] ? "&ndash;" + depths[i + 1] + "<br>" : "+");
     }
 
     return div;
